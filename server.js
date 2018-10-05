@@ -12,8 +12,10 @@ var Article = require('./models/Article.js');
 var request = require('request');
 var cheerio = require('cheerio');
 
+
+var MONGODB_URI = process.env.MONGODB_URI;
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://heroku_mwz96bfp:apple123@ds123603.mlab.com:23603/heroku_mwz96bfp");
+mongoose.connect(MONGODB_URI);
 
 var db = mongoose.connection;
 
