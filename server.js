@@ -66,7 +66,7 @@ app.get("/saved", function(req,res){
 });
 
 app.get("/scrape", function(req,res){
-	request("https://www.nytimes.com", function(error,response, html){
+	request("https://www.nytimes.com/", function(error,response, html){
 		var $ = cheerio.load(html);
 		$("article").each(function(i,element){
 			var result = {};
