@@ -13,7 +13,8 @@ var request = require('request');
 var cheerio = require('cheerio');
 
 
-var MONGODB_URI = process.env.MONGODB_URI;
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 
@@ -65,7 +66,7 @@ app.get("/saved", function(req,res){
 });
 
 app.get("/scrape", function(req,res){
-	request("https://www.reuters.com/news", function(error,response, html){
+	request("https://www.nytimes.com", function(error,response, html){
 		var $ = cheerio.load(html);
 		$("article").each(function(i,element){
 			var result = {};
