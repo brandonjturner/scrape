@@ -1,10 +1,8 @@
-<!--Homepage-->
 <div class="container">
     <div class="col-md-12 jumbotron">
         <div class="text-center">
             <h1> News Scraper</h1>
         </div>
-
     </div>
     <div class="col-md-12">
         {{#if article}}
@@ -17,7 +15,6 @@
                     <p> {{this.summary}}</p>
                     <a href={{this.link}} target="_blank">{{this.link}}</a>
                     <br><br>
-                    <!-- Button -->
                     <button type="button" class="btn btn-default save" data-id={{this._id}}>Save Article</button>
                 </div>
             </div>

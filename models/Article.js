@@ -1,8 +1,6 @@
 var mongoose = require('mongoose');
 var Note = require('./Note');
-
 var Schema = mongoose.Schema;
-
 var ArticleSchema = new Schema({
 	title: {
 		type: String,
@@ -25,7 +23,5 @@ var ArticleSchema = new Schema({
 		ref:"Note"
 	}]
 });
-
 var Article = mongoose.model("Article", ArticleSchema);
-
 module.exports = Article;
