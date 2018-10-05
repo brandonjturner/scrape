@@ -13,7 +13,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI;
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 
